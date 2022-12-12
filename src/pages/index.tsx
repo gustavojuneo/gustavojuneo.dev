@@ -1,11 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GithubLogo, LinkedinLogo, InstagramLogo } from 'phosphor-react';
-import { getBase64ImageUrl } from "../utils/getBase64ImageUrl";
 
 export default function Home() {
-  getBase64ImageUrl();
-
   return (
     <div className="flex flex-col w-screen h-screen">
       <header>
