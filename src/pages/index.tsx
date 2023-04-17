@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-screen h-screen">
       <header>
-      
+        <title>Gustavo Juneo | Homepage</title>
       </header>
       <main className="h-full flex flex-col items-center justify-center">
         <Image
@@ -34,7 +34,7 @@ export default function Home() {
           <li>
             <Link
               className="text-zinc-100 flex gap-2 hover:text-[#0077b5] transition" 
-              href="https://github.com/gustavojuneo" 
+              href="https://www.linkedin.com/in/gustavo-juneo" 
               target="_blank">
               linkedin <LinkedinLogo size={22} />
             </Link>
@@ -42,7 +42,7 @@ export default function Home() {
           <li>
             <Link
               className="text-zinc-100 flex gap-2 hover:text-[#e1306c] transition" 
-              href="https://github.com/gustavojuneo" 
+              href="https://instagram.com/gusta.vt" 
               target="_blank">
               instagram <InstagramLogo size={22} />
             </Link>
