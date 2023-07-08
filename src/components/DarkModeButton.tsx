@@ -26,7 +26,13 @@ export const DarkModeButton = ({ className }: Props) => {
   }
 
   useEffect(() => {
-    setTheme(localStorage.theme)
+    if ('theme' in localStorage) {
+      setTheme(localStorage.theme)
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark')
+    } else {
+      setTheme('light')
+    }
   }, [])
 
   return (
