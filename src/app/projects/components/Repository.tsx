@@ -28,7 +28,7 @@ export const Repository = ({ repository }: Props) => {
           alt={`Screenshot of ${repository.name} application.`}
           src={`https://api.microlink.io/?url=${repository.homepage}&screenshot=true&meta=false&embed=screenshot.url`}
           onError={() => setShow(false)}
-          className="rounded-lg"
+          className="h-full w-full rounded-lg"
         />
       )}
       <div
