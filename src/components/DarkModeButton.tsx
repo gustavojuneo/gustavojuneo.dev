@@ -14,7 +14,7 @@ export const DarkModeButton = ({ className }: Props) => {
 
   const handleToggleThemeMode = () => {
     const storage = localStorage as unknown as { theme: Theme }
-    if (storage.theme === 'dark') {
+    if (theme === 'dark') {
       storage.theme = 'light'
       document.documentElement.classList.remove('dark')
       setTheme('light')
