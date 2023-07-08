@@ -1,11 +1,6 @@
-import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Homepage',
-}
 
 export default function Home() {
   return (
@@ -23,7 +18,7 @@ export default function Home() {
       />
       <h1 className="mt-6 text-2xl">Gustavo Juneo</h1>
       <Link
-        href="/portfolio"
+        href="/projects"
         className="mt-4 flex items-center gap-2 rounded-xl bg-zinc-300 px-2 py-1 transition hover:bg-zinc-400 dark:bg-zinc-800 dark:hover:bg-zinc-600 dark:hover:text-zinc-50"
       >
         See my projects

@@ -1,6 +1,11 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { Repository } from './components/Repository'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Projects',
+}
 
 interface RepositoryDTO {
   id: string
