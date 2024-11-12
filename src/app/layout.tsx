@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" className={poppins.className}>
-      <body className="flex h-screen w-screen flex-col bg-zinc-200 text-zinc-900 dark:bg-[#08070b] dark:text-zinc-50">
+      <body className="flex h-screen w-screen flex-col bg-zinc-200 text-zinc-900 dark:bg-[#08070b] dark:text-zinc-50 justify-center">
         <Theme />
         <DarkModeButton className="absolute right-0 top-0" />
         {children}
-        <footer className="mt-auto px-2 py-4">
+        <footer className="mt-4 px-2 py-4">
           <ul className="flex items-center justify-center gap-2">
             <li>
               <Link
