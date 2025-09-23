@@ -1,0 +1,44 @@
+---
+import { Sun, Moon } from "@lucide/astro";
+import Button from "../../components/button.astro";
+---
+
+<Button
+    id="theme-button"
+    size="icon"
+    variant="ghost"
+    onclick="toggleTheme();"
+    class="group overflow-hidden relative"
+>
+    <Sun
+        class="group-data-[theme='dark']:opacity-0 group-data-[theme='dark']:-translate-y-[32px] absolute transition-all duration-200"
+    />
+    <Moon
+        class="opacity-100 not-group-data-[theme='dark']:opacity-0 not-group-data-[theme='dark']:translate-y-[32px] absolute transition-all duration-200"
+    />
+</Button>
+
+<script is:inline>
+    const buttonElement = document.getElementById("theme-button");
+    const htmlElement = document.querySelector("html");
+    const isDark = htmlElement.classList.contains("dark");
+
+    if (isDark) {
+        buttonElement.setAttribute("data-theme", "dark");
+    } else {
+        buttonElement.removeAttribute("data-theme");
+    }
+
+    function toggleTheme() {
+        const isDark = htmlElement.classList.contains("dark");
+
+        if (isDark) {
+            htmlElement.classList.remove("dark");
+            buttonElement.removeAttribute("data-theme");
+            return;
+        }
+
+        htmlElement.classList.add("dark");
+        buttonElement.setAttribute("data-theme", "dark");
+    }
+</script>

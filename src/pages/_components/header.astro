@@ -1,0 +1,110 @@
+---
+import { Menu, X, Sun, Moon } from "@lucide/astro";
+import Button from "../../components/button.astro";
+import ThemeButton from "./theme-button.astro";
+const menus = [
+    {
+        id: "about",
+        name: "About",
+    },
+    {
+        id: "experiences",
+        name: "Experiences",
+    },
+    {
+        id: "contact",
+        name: "Contact",
+    },
+];
+---
+
+<header>
+    <nav
+        id="desktop-navbar"
+        class="fixed left-1/2 transform -translate-x-1/2 z-50 w-full p-2 md:p-3 lg:p-4 transition-opacity duration-300 opacity-0"
+    >
+        <div
+            class="transition-all duration-300 px-2 rounded-2xl border backdrop-blur-md max-w-4xl mx-auto bg-neutral-900/20 border-white/10 shadow-lg"
+        >
+            <div class="flex items-center w-full justify-between">
+                <a
+                    class="flex gap-2 items-center px-2 py-0.5 pr-4 rounded-xl transition-all duration-500 ease-in-out min-w-[120px] hover:brightness-150"
+                    href="/#"
+                >
+                    <span
+                        class="text-lg tracking-tight transition-opacity duration-500 opacity-100 hover:text-primary font-semibold text-foreground"
+                        >Gustavo Juneo</span
+                    >
+                </a>
+                <div class="flex items-center">
+                    {
+                        menus.map((menu) => (
+                            <a
+                                class="text-sm text-foreground/50 hover:text-foreground px-3 py-3 transition-all duration-500 ease-in-out text-center min-w-[80px] rounded-lg hidden sm:block"
+                                href={`/#${menu.id}`}
+                            >
+                                {menu.name}
+                            </a>
+                        ))
+                    }
+                    <ThemeButton />
+                    <button
+                        type="button"
+                        class="text-foreground/30 hover:foreground p-2 rounded-lg transition-all duration-500 ease-in-out block sm:hidden cursor-pointer"
+                        aria-label="Toggle menu"
+                        onclick="toggleMenu(this);"
+                    >
+                        <Menu class="w-6 h-6" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div
+            id="mobile-menu"
+            data-state="hidden"
+            class="fixed inset-x-0 top-[64px] bg-secondary/90 backdrop-blur-lg border-t border-border md:hidden data-[state='hidden']:hidden"
+        >
+            <nav class="container mx-auto px-4 py-6 flex flex-col space-y-4">
+                {
+                    menus.map((menu) => (
+                        <a
+                            class="text-foreground hover:text-white px-3 py-2 rounded-lg transition-all duration-300 text-sm"
+                            href={`/#${menu.id}`}
+                        >
+                            {menu.name}
+                        </a>
+                    ))
+                }
+            </nav>
+        </div>
+    </nav>
+</header>
+
+<script is:inline>
+    const navElement = document.querySelector("#desktop-navbar");
+
+    document.addEventListener("scroll", (event) => {
+        if (window.scrollY > 0) {
+            navElement.classList.add("opacity-100");
+            navElement.classList.remove("opacity-0");
+            navElement.classList.remove("pointer-events-none");
+        } else {
+            navElement.classList.remove("opacity-100");
+            navElement.classList.add("opacity-0");
+            navElement.classList.add("pointer-events-none");
+        }
+    });
+
+    function toggleMenu(e) {
+        const mobileMenuElement = document.getElementById("mobile-menu");
+        const isOpen = mobileMenuElement.getAttribute("data-state") === "open";
+        if (isOpen) {
+            mobileMenuElement.setAttribute("data-state", "hidden");
+            document.body.classList.remove("overflow-hidden");
+            return;
+        }
+
+        document.body.classList.add("overflow-hidden");
+        mobileMenuElement.setAttribute("data-state", "open");
+    }
+</script>
