@@ -70,6 +70,7 @@ const menus = [
                         <a
                             class="text-foreground hover:text-white px-3 py-2 rounded-lg transition-all duration-300 text-sm"
                             href={`/#${menu.id}`}
+                            onclick="closeMenu();"
                         >
                             {menu.name}
                         </a>
@@ -106,5 +107,15 @@ const menus = [
 
         document.body.classList.add("overflow-hidden");
         mobileMenuElement.setAttribute("data-state", "open");
+    }
+
+    function closeMenu() {
+        const mobileMenuElement = document.getElementById("mobile-menu");
+        const isOpen = mobileMenuElement.getAttribute("data-state") === "open";
+        if (isOpen) {
+            mobileMenuElement.setAttribute("data-state", "hidden");
+            document.body.classList.remove("overflow-hidden");
+            return;
+        }
     }
 </script>
