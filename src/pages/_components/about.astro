@@ -1,132 +1,110 @@
 ---
 const skills = [
-    {
-        name: "Programming Languages",
-        itens: ["Javascript", "Typescript", "C#", "GoLang", "Kotlin"],
-    },
-    {
-        name: "Frontend",
-        itens: [
-            "React",
-            "Astro",
-            "Tailwindcss",
-            "NextJs",
-            "React Native",
-            "Expo",
-            "Vite",
-            "Tanstack Router",
-            "React Router Dom",
-            "Webpack",
-            "Module Federation",
-            "Redux",
-            "Zustand",
-            "Testing Library"
-        ],
-    },
-    {
-        name: "Backend",
-        itens: [
-            "Node.js",
-            ".Net Framework",
-            "C#",
-            "GoLang",
-            "Express",
-            "Fastify",
-            "Postgresql",
-            "MySQL",
-            "RabbitMQ",
-            "Redis",
-            "MongoDB",
-            "Grafana",
-            "OpenAPI",
-        ],
-    },
-    {
-        name: "Devops",
-        itens: [
-            "Docker",
-            "AWS",
-            "Google Cloud",
-            "Firebase",
-            "Coolify",
-            "Nginx",
-            "Nx",
-            "Kubernetes",
-            "Terraform"
-        ],
-    },
-    {
-        name: "Tools",
-        itens: ["Git", "GitHub", "Figma", "Scrum"],
-    },
+  {
+    name: "Programming Languages",
+    itens: ["Javascript", "Typescript", "C#", "GoLang", "Kotlin"],
+  },
+  {
+    name: "Frontend",
+    itens: [
+      "React",
+      "Astro",
+      "Tailwindcss",
+      "NextJs",
+      "React Native",
+      "Expo",
+      "Vite",
+      "Tanstack Router",
+      "React Router Dom",
+      "Webpack",
+      "Module Federation",
+      "Redux",
+      "Zustand",
+      "Testing Library",
+    ],
+  },
+  {
+    name: "Backend & Data",
+    itens: [
+      "Node.js",
+      ".Net Framework",
+      "C#",
+      "GoLang",
+      "Express",
+      "Fastify",
+      "Postgresql",
+      "MySQL",
+      "RabbitMQ",
+      "Redis",
+      "MongoDB",
+      "Grafana",
+      "OpenAPI",
+      "OpenTelemetry",
+      "Prometheus",
+      "Grafana",
+      "Jaeger",
+    ],
+  },
+  {
+    name: "Devops",
+    itens: ["Docker", "AWS", "Google Cloud", "Firebase", "Coolify", "Nginx", "Nx", "Kubernetes", "Terraform"],
+  },
+  {
+    name: "Tools",
+    itens: ["Git", "GitHub", "Figma", "Scrum"],
+  },
 ];
 ---
 
-<section
-    id="about"
-    class="flex-items-center justify-center px-4 pt-20 relative"
->
-    <div class="max-w-4xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div>
-                <h2 class="font-medium mb-6">ABOUT ME</h2>
-                <h3 class="text-4xl font-bold mb-16">My Background</h3>
-                <div class="mb-20 space-y-4">
-                    <p>
-                        Full Stack Developer at Linear Sistemas, with a
-                        postgraduate degree in Software Engineering from PUC
-                        Minas and a Technologist degree in Systems Analysis and
-                        Development.
-                    </p>
-                    <p>
-                        I have hands-on experience with C#, GoLang, TypeScript and
-                        JavaScript, working with technologies such as .NET
-                        Framework, React.js, and React Native. I also have solid
-                        knowledge in infrastructure and actively contribute to
-                        DevOps practices, including CI/CD pipeline management
-                        and automation.
-                    </p>
-                    <p class="text-muted-foreground">
-                        I'm passionate about technology, innovation, and team
-                        collaboration. I work closely with development teams,
-                        providing technical support and driving continuous
-                        improvement in our solutions.
-                    </p>
-                    <p class="text-muted-foreground">
-                        Currently focused on expanding my expertise in native
-                        Android development using Kotlin. Intermediate English
-                        proficiency, enabling effective communication in
-                        technical and professional settings.
-                    </p>
-                </div>
-                <div class="items-center gap-4 hidden md:flex">
-                    <div class="w-6 h-0.5 bg-foreground"></div>
-                    <span class="font-medium text-xl">See my work</span>
-                </div>
-            </div>
-            <div
-                class="shadow-md rounded-2xl p-8 dark:bg-secondary/20 max-md:mb-20"
-            >
-                <h3 class="text-xl font-medium mb-2">Technical Expertise</h3>
-                <div class="flex flex-col gap-4">
-                    {
-                        skills.map((skill) => (
-                            <div class="flex flex-col">
-                                <span class="text-sm font-medium uppercase text-muted-foreground mb-2">
-                                    {skill.name}
-                                </span>
-                                <ul class="flex flex-wrap gap-2">
-                                    {skill.itens.map((item) => (
-                                        <li class="py-2 px-4 bg-secondary border border-border rounded-full text-sm">
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
+<section id="about" class="flex-items-center justify-center px-4 pt-20 relative">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="font-medium mb-6">ABOUT ME</h2>
+        <h3 class="text-4xl font-bold mb-16">My Background</h3>
+        <div class="mb-20 space-y-4">
+          <p>
+            Full Stack Developer at Linear Sistemas, with a postgraduate degree in Software Engineering from PUC Minas
+            and a Technologist degree in Systems Analysis and Development.
+          </p>
+          <p>
+            I have hands-on experience with C#, GoLang, TypeScript and JavaScript, working with technologies such as
+            .NET Framework, React.js, and React Native. I also have solid knowledge in infrastructure and actively
+            contribute to DevOps practices, including CI/CD pipeline management and automation.
+          </p>
+          <p class="text-muted-foreground">
+            I'm passionate about technology, innovation, and team collaboration. I work closely with development teams,
+            providing technical support and driving continuous improvement in our solutions.
+          </p>
+          <p class="text-muted-foreground">
+            Currently focused on expanding my expertise in native Android development using Kotlin. Upper Intermediate
+            English proficiency, enabling effective communication in technical and professional settings.
+          </p>
         </div>
+        <div class="items-center gap-4 hidden md:flex">
+          <div class="w-6 h-0.5 bg-foreground"></div>
+          <a href="/#experiences" title="See my work">
+            <span class="font-medium text-xl">See my work</span>
+          </a>
+        </div>
+      </div>
+      <div class="shadow-md rounded-2xl p-8 dark:bg-secondary/20 max-md:mb-20">
+        <h3 class="text-xl font-medium mb-2">Technical Expertise</h3>
+        <div class="flex flex-col gap-4">
+          {
+            skills.map((skill) => (
+              <div class="flex flex-col">
+                <span class="text-sm font-medium uppercase text-muted-foreground mb-2">{skill.name}</span>
+                <ul class="flex flex-wrap gap-2">
+                  {skill.itens.map((item) => (
+                    <li class="py-2 px-4 bg-secondary border border-border rounded-full text-sm">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
+  </div>
 </section>

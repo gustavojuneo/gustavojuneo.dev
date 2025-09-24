@@ -3,162 +3,155 @@ import { MapPin, CalendarDays } from "@lucide/astro";
 import Badge from "../../components/badge.astro";
 
 const experiences = [
-    {
-        title: "Mid Full Stack Developer",
-        company: "Linear Sistemas LTDA.",
-        location: "Remote",
-        period: "Jul 2022 - Present",
-        current: true,
-        description:
-            "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
-        technologies: [
-            "React",
-            "TypeScript",
-            "C#",
-            ".Net Framework",
-            "Entity Framework",
-            "AWS",
-            "PostgreSQL",
-        ],
-    },
-    {
-        title: "Mid Front End Developer",
-        company: "Linear Sistemas LTDA.",
-        location: "Remote",
-        period: "Jan 2022 - Jul 2022",
-        current: false,
-        description:
-            "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
-        technologies: ["React", "TypeScript"],
-    },
-    {
-        title: "Junior Front End Developer",
-        company: "Linear Sistemas LTDA.",
-        location: "Remote",
-        period: "Jun 2021 - Jan 2022",
-        current: false,
-        description:
-            "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
-        technologies: ["React", "Javascript"],
-    },
-    {
-        title: "Trainee Front End Developer",
-        company: "Linear Sistemas LTDA.",
-        location: "Remote",
-        period: "Apr 2021 - Jun 2021",
-        current: false,
-        description:
-            "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
-        technologies: ["React", "Javascript"],
-    },
+  {
+    title: "Mid Full Stack Developer",
+    company: "Linear Sistemas LTDA.",
+    location: "Remote",
+    period: "Jul 2022 - Present",
+    current: true,
+    description:
+      "Transitioning to a full-stack capacity, I became responsible for the entire development lifecycle of new features. On the back-end, I engineered new microservices in C# and .NET, leveraging Entity Framework for data persistence and RabbitMQ for creating resilient, message-driven systems. I focused heavily on performance, optimizing database queries and refactoring slow batch processes with parallelism. To ensure system reliability, I built a comprehensive observability stack with Jaeger, Prometheus, and Grafana. I also developed real-time functionalities using WebSockets and SSE. In addition to these back-end responsibilities, I continued to lead front-end development, ensuring seamless integration and high-quality user experiences.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "C#",
+      ".Net Framework",
+      "Entity Framework",
+      "Fluent Validations",
+      "XUnit",
+      "AWS S3",
+      "AWS Bastion",
+      "AWS EC2",
+      "AWS ECR",
+      "AWS Vault",
+      "PostgreSQL",
+      "Terraform",
+      "Prometheus",
+      "Grafana",
+      "Jaeger",
+      "Nginx",
+      "Kubernetes",
+      "Git",
+      "Gitlab",
+      "I18n",
+    ],
+  },
+  {
+    title: "Mid Front End Developer",
+    company: "Linear Sistemas LTDA.",
+    location: "Remote",
+    period: "Jan 2022 - Jul 2022",
+    current: false,
+    description:
+      "In this role, I took ownership of key architectural and performance initiatives. I led the strategic migration of our internal component library to TypeScript and pioneered the adoption of a Micro Front-End architecture with Module Federation. On the performance side, I optimized our build system by fine-tuning the Webpack configuration and improved front-end load times by implementing skeleton screens. I also expanded our development infrastructure by building out robust CI/CD pipelines that automated quality checks and deployments. Beyond technical tasks, I actively mentored other developers and contributed to our roadmap by analyzing new features and defining technical tasks for the team.",
+    technologies: [
+      "React",
+      "Javascript",
+      "TypeScript",
+      "Redux",
+      "Axios",
+      "Webpack",
+      "Module Federation",
+      "Lerna",
+      "I18n",
+      "Git",
+      "Gitlab",
+    ],
+  },
+  {
+    title: "Junior Front End Developer",
+    company: "Linear Sistemas LTDA.",
+    location: "Remote",
+    period: "Jun 2021 - Jan 2022",
+    current: false,
+    description:
+      "In this role, I was responsible for delivering a high volume of front-end tasks, from feature development to maintenance. I played a key part in improving our codebase by refactoring older class components into modern functional components and ensuring our NPM dependencies were up-to-date. Guided by DRY and KISS principles, I focused on writing clean code and often proposed interface improvements to enhance the final product. I also enjoyed collaborating with the team by providing support to my junior peers.",
+    technologies: ["React", "Redux", "Axios", "Webpack", "Javascript", "I18n", "Git", "Gitlab"],
+  },
+  {
+    title: "Trainee Front End Developer",
+    company: "Linear Sistemas LTDA.",
+    location: "Remote",
+    period: "Apr 2021 - Jun 2021",
+    current: false,
+    description:
+      "As a trainee, I contributed to the development of user-facing features using React.js and Redux. My primary responsibilities included building responsive and accessible web interfaces and contributing to the creation and maintenance of a shared component package, which improved development efficiency and consistency across the application.",
+    technologies: ["React", "Redux", "Axios", "Javascript", "I18n", "Git", "Gitlab"],
+  },
 ];
 ---
 
 <section id="experiences" class="px-4 pt-20">
-    <div class="max-w-4xl mx-auto">
-        <div class="max-w-3xl text-center space-y-6 mb-16">
-            <h2
-                class="text-3xl md:text-4xl font-bold tracking-tight text-balance"
-            >
-                Professional Journey
-            </h2>
-            <p
-                class="text-lg text-muted-foreground leading-relaxed text-balance"
-            >
-                Building impactful solutions across diverse industries and
-                continuously evolving with modern technologies.
-            </p>
-        </div>
-
-        <div class="relative">
-            <div
-                class="absolute left-4 md:left-1/2 top-8 bottom-8 w-px bg-border md:transform md:-translate-x-px"
-            >
-            </div>
-            <div class="space-y-8">
-                {
-                    experiences.map((exp, index) => (
-                        <div class="relative">
-                            <div
-                                class={`flex flex-col md:flex-row md:items-center gap-8 ${
-                                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                                }`}
-                            >
-                                <div class="absolute left-4 md:left-1/2 w-2 h-2 bg-primary rounded-full transform -translate-x-1/2 mt-6" />
-
-                                <div
-                                    class={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? "md:text-right" : ""}`}
-                                >
-                                    <div class="bg-card p-6 rounded-xl shadow hover:shadow-medium transition-all duration-300 border border-border/50">
-                                        <div class="space-y-4">
-                                            <div>
-                                                <div class="flex items-start justify-between mb-2">
-                                                    <div
-                                                        class={`${index % 2 === 0 ? "md:text-right" : ""}`}
-                                                    >
-                                                        <h3 class="text-xl font-semibold">
-                                                            {exp.title}
-                                                        </h3>
-                                                        <div class="text-primary font-medium text-lg">
-                                                            {exp.company}
-                                                            {exp.current && (
-                                                                <Badge class="ml-2 text-xs">
-                                                                    Current
-                                                                </Badge>
-                                                            )}
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div
-                                                    class={`flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground ${
-                                                        index % 2 === 0
-                                                            ? "md:justify-end"
-                                                            : ""
-                                                    }`}
-                                                >
-                                                    <div class="flex items-center gap-1">
-                                                        <CalendarDays class="w-4 h-4" />
-                                                        {exp.period}
-                                                    </div>
-                                                    <div class="flex items-center gap-1">
-                                                        <MapPin class="w-4 h-4" />
-                                                        {exp.location}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <p class="text-muted-foreground leading-relaxed">
-                                                {exp.description}
-                                            </p>
-
-                                            <div
-                                                class={`flex flex-wrap gap-2 ${
-                                                    index % 2 === 0
-                                                        ? "md:justify-end"
-                                                        : ""
-                                                }`}
-                                            >
-                                                {exp.technologies.map(
-                                                    (tech) => (
-                                                        <Badge
-                                                            variant="outline"
-                                                            class="text-xs"
-                                                        >
-                                                            {tech}
-                                                        </Badge>
-                                                    ),
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-1 hidden md:block" />
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
+  <div class="max-w-4xl mx-auto">
+    <div class="max-w-3xl text-center space-y-6 mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-balance">Professional Journey</h2>
+      <p class="text-lg text-muted-foreground leading-relaxed text-balance">
+        Building impactful solutions across diverse industries and continuously evolving with modern technologies.
+      </p>
     </div>
+
+    <div class="relative">
+      <div class="absolute left-4 md:left-1/2 top-8 bottom-8 w-px bg-border md:transform md:-translate-x-px"></div>
+      <div class="space-y-8">
+        {
+          experiences.map((exp, index) => (
+            <div class="relative">
+              <div
+                class={`flex flex-col md:flex-row md:items-center gap-8 ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                <div class="absolute left-4 md:left-1/2 w-2 h-2 bg-primary rounded-full transform -translate-x-1/2 mt-6" />
+
+                <div class={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                  <div class="bg-card p-6 rounded-xl shadow hover:shadow-medium transition-all duration-300 border border-border/50">
+                    <div class="space-y-4">
+                      <div>
+                        <div class="flex items-start justify-between mb-2">
+                          <div class={`${index % 2 === 0 ? "md:text-right" : ""}`}>
+                            <h3 class="text-xl font-semibold">{exp.title}</h3>
+                            <div class="text-primary font-medium text-lg">
+                              {exp.company}
+                              {exp.current && <Badge class="ml-2 text-xs">Current</Badge>}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class={`flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground ${
+                            index % 2 === 0 ? "md:justify-end" : ""
+                          }`}
+                        >
+                          <div class="flex items-center gap-1">
+                            <CalendarDays class="w-4 h-4" />
+                            {exp.period}
+                          </div>
+                          <div class="flex items-center gap-1">
+                            <MapPin class="w-4 h-4" />
+                            {exp.location}
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="text-muted-foreground leading-relaxed">{exp.description}</p>
+
+                      <div class={`flex flex-wrap gap-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                        {exp.technologies.map((tech) => (
+                          <Badge variant="outline" class="text-xs">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-1 hidden md:block" />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>
