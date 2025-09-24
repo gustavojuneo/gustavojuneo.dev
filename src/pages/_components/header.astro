@@ -30,10 +30,14 @@ const menus = [
                 <a
                     class="flex gap-2 items-center px-2 py-0.5 pr-4 rounded-xl transition-all duration-500 ease-in-out min-w-[120px] hover:brightness-150"
                     href="/#"
+                    title="Gustavo Juneo"
                 >
                     <span
                         class="text-lg tracking-tight transition-opacity duration-500 opacity-100 hover:text-primary font-semibold text-foreground"
-                        >Gustavo Juneo</span
+                        aria-label="Gustavo Juneo"
+                        >
+                          Gustavo Juneo
+                        </span
                     >
                 </a>
                 <div class="flex items-center">
@@ -42,6 +46,7 @@ const menus = [
                             <a
                                 class="text-sm text-foreground/50 hover:text-foreground px-3 py-3 transition-all duration-500 ease-in-out text-center min-w-[80px] rounded-lg hidden sm:block"
                                 href={`/#${menu.id}`}
+                                title={menu.name}
                             >
                                 {menu.name}
                             </a>
@@ -53,6 +58,7 @@ const menus = [
                         class="text-foreground/30 hover:foreground p-2 rounded-lg transition-all duration-500 ease-in-out block sm:hidden cursor-pointer"
                         aria-label="Toggle menu"
                         onclick="toggleMenu(this);"
+                        aria-label="Toggle Menu"
                     >
                         <Menu class="w-6 h-6" />
                     </button>
@@ -71,6 +77,7 @@ const menus = [
                             class="text-foreground hover:text-white px-3 py-2 rounded-lg transition-all duration-300 text-sm"
                             href={`/#${menu.id}`}
                             onclick="closeMenu();"
+                            title={menu.name}
                         >
                             {menu.name}
                         </a>
