@@ -1,0 +1,21 @@
+---
+import SectionTitle from "./section-title.astro";
+import Section from "./section.astro";
+import Item from "./item.astro";
+import ItemTitle from "./item-title.astro";
+import type { Skills } from "../types";
+
+interface Props {
+  skills: Skills
+}
+const { skills } = Astro.props
+---
+
+<Section>
+    <SectionTitle>Skills</SectionTitle>
+    {skills.map(skill => (
+      <Item>
+        <ItemTitle>{skill.title}:</ItemTitle> {skill.itens.join(', ')}
+      </Item>
+    ))}
+</Section>

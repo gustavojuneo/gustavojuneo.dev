@@ -1,0 +1,31 @@
+---
+import type { Educations } from "../types";
+import ItemDate from "./item-date.astro";
+import ItemHeader from "./item-header.astro";
+import ItemSubtitle from "./item-subtitle.astro";
+import ItemTitle from "./item-title.astro";
+import Item from "./item.astro";
+import SectionTitle from "./section-title.astro";
+import Section from "./section.astro";
+
+interface Props {
+  educations: Educations
+}
+const { educations } = Astro.props
+---
+
+<Section>
+  <SectionTitle>Education</SectionTitle>
+  
+  {educations.map(education => (
+    <Item>
+      <ItemHeader>
+        <div>
+          <ItemTitle>{education.title}</ItemTitle>
+          <ItemSubtitle>{education.subtitle}</ItemSubtitle>
+        </div>
+        <ItemDate>{education.date}</ItemDate>
+      </ItemHeader>
+    </Item>
+  ))}
+</Section>

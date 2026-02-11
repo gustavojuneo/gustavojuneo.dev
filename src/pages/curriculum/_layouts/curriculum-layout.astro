@@ -1,0 +1,73 @@
+---
+import "../../../styles/global.css";
+import Header from "../../_components/header.astro";
+import CurriculumHeader from "./../_components/curriculum-header.astro";
+import CurriculumSummary from "./../_components/curriculum-summary.astro";
+import CurriculumSkills from "./../_components/curriculum-skills.astro";
+import CurriculumExperience from "./../_components/curriculum-experience.astro";
+import CurriculumEducation from "./../_components/curriculum-education.astro";
+import CurriculumLanguages from "./../_components/curriculum-languages.astro";
+import type { Educations, Experiences, Languagens, Skills, Social } from "../types";
+
+interface Props {
+  frontmatter: {
+    fullName: string
+    role: string
+    social: Social
+    summary: string
+    languages: Languagens
+    skills: Skills
+    experiences: Experiences
+    educations: Educations
+  }
+}
+const { frontmatter } = Astro.props;
+const { 
+  summary,
+  social,
+  fullName,
+  role,
+  skills,
+  experiences,
+  educations,
+  languages
+} = frontmatter;
+---
+
+<html lang="en" class="dark">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon shortcut" type="image/x-ico" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <meta
+     			name="description"
+     			content="Passionate about creating innovative solutions and building exceptional digital experiences. Specialized in modern web technologies and scalable applications."
+    		/>
+        <title>Gustavo Santos | Full-Stack Developer Curriculum</title>
+        <style>
+          @media print {
+            body {
+              font-size: 9pt;
+              color: #111;
+            }
+
+            @page {
+              size: A4;
+              margin: 0.5in;
+            }
+          }
+        </style>
+    </head>
+    <body class="print:m-0 print:p-0 print:bg-white text-[9pt]">
+        <Header />
+        <main class="print:p-0 print:m-0 max-w-[8.5in] m-auto pl-9 pr-9 pt-11 pb-11 font-arial leading-tight">
+          <CurriculumHeader social={social} fullName={fullName} role={role} />
+          <CurriculumSummary summary={summary} />
+          <CurriculumSkills skills={skills} />
+          <CurriculumExperience experiences={experiences} />
+          <CurriculumEducation educations={educations} />
+          <CurriculumLanguages languages={languages} />
+        </main>
+    </body>
+</html>

@@ -1,6 +1,5 @@
 ---
-import { Menu, X, Sun, Moon } from "@lucide/astro";
-import Button from "../../components/button.astro";
+import { Menu } from "@lucide/astro";
 import ThemeButton from "./theme-button.astro";
 const menus = [
     {
@@ -15,10 +14,15 @@ const menus = [
         id: "contact",
         name: "Contact",
     },
+    {
+        id: "curriculum",
+        name: "Curriculum",
+        path: "/curriculum"
+    }
 ];
 ---
 
-<header>
+<header class="print:hidden">
     <nav
         id="desktop-navbar"
         class="fixed left-1/2 transform -translate-x-1/2 z-50 w-full p-2 md:p-3 lg:p-4 transition-opacity duration-300 opacity-0"
@@ -45,7 +49,7 @@ const menus = [
                         menus.map((menu) => (
                             <a
                                 class="text-sm text-foreground/50 hover:text-foreground px-3 py-3 transition-all duration-500 ease-in-out text-center min-w-[80px] rounded-lg hidden sm:block"
-                                href={`/#${menu.id}`}
+                                href={menu.path ? menu.path : `/#${menu.id}`}
                                 title={menu.name}
                             >
                                 {menu.name}

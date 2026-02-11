@@ -1,0 +1,39 @@
+---
+import Item from "./item.astro";
+import ItemDate from "./item-date.astro";
+import ItemHeader from "./item-header.astro";
+import ItemSubtitle from "./item-subtitle.astro";
+import ItemTitle from "./item-title.astro";
+import List from "./list.astro";
+import ListItem from "./list-item.astro";
+import Section from "./section.astro";
+import SectionTitle from "./section-title.astro";
+import type { Experiences } from "../types";
+
+interface Props {
+  experiences: Experiences
+}
+const { experiences } = Astro.props
+---
+
+<Section>
+  <SectionTitle>Experience</SectionTitle>
+  {
+    experiences.map(experience => (
+      <Item>
+        <ItemHeader>
+          <div>
+            <ItemTitle>{experience.title}</ItemTitle>
+            <ItemSubtitle>{experience.subtitle}</ItemSubtitle>
+          </div>
+          <ItemDate>{experience.date}</ItemDate>
+        </ItemHeader>
+        <List>
+          {experience.bullets.map(info => (
+            <ListItem>{info}</ListItem>
+          ))}
+        </List>
+      </Item>
+    ))
+  }
+</Section>

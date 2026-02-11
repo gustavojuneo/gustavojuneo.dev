@@ -1,0 +1,29 @@
+---
+import Item from "./item.astro";
+import ItemDate from "./item-date.astro";
+import ItemHeader from "./item-header.astro";
+import ItemTitle from "./item-title.astro";
+import SectionTitle from "./section-title.astro";
+import Section from "./section.astro";
+import type { Languagens } from "../types";
+
+interface Props {
+  languages: Languagens
+}
+const { languages } = Astro.props
+---
+
+<Section>
+  <SectionTitle>Languages</SectionTitle>
+  
+  {languages.map(language => (
+    <Item>
+      <ItemHeader>
+        <ItemTitle>{language.title}</ItemTitle>
+        <ItemDate>
+          {language.description}
+        </ItemDate>
+      </ItemHeader>
+    </Item>
+  ))}
+</SectionTitle>

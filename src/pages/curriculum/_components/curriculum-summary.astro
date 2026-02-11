@@ -1,0 +1,15 @@
+---
+import SectionTitle from "./section-title.astro";
+import Section from "./section.astro";
+
+interface Props {
+  summary: string
+}
+
+const { summary } = Astro.props
+---
+
+<Section>
+  <SectionTitle>Summary</SectionTitle>
+  <p>{summary}</p>
+</Section>
