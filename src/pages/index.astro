@@ -15,9 +15,9 @@ import Footer from "./_components/footer.astro";
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <meta
-     			name="description"
-     			content="Passionate about creating innovative solutions and building exceptional digital experiences. Specialized in modern web technologies and scalable applications."
-    		/>
+            name="description"
+            content="Passionate about creating innovative solutions and building exceptional digital experiences. Specialized in modern web technologies and scalable applications."
+        />
         <title>Gustavo Santos | Full-Stack Developer Portfolio</title>
     </head>
     <body>
@@ -29,3 +29,15 @@ import Footer from "./_components/footer.astro";
         <Footer />
     </body>
 </html>
+
+<script is:inline>
+    const htmlElement = document.querySelector("html");
+    const theme = localStorage.getItem("theme");
+
+    if (theme === 'light') {
+        htmlElement.classList.remove("dark")
+        buttonElement.removeAttribute("data-theme");
+    } else {
+        buttonElement.setAttribute("data-theme", "dark");
+    }
+</script>

@@ -71,3 +71,15 @@ const {
         </main>
     </body>
 </html>
+
+<script is:inline>
+    const htmlElement = document.querySelector("html");
+    const theme = localStorage.getItem("theme");
+
+    if (theme === 'light') {
+        htmlElement.classList.remove("dark")
+        buttonElement.removeAttribute("data-theme");
+    } else {
+        buttonElement.setAttribute("data-theme", "dark");
+    }
+</script>
